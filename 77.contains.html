@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="test" class="">
+		<h2>Contains method, hasAttribute method, hasChildNodes method</h2>
+		<div>
+			<h1 id="abc">oeroewo</h1>
+		</div>
+		<ul id="list1">
+			<li>orange</li>
+			<li>banana</li>
+			<li>apple</li>
+			<li>grapes</li>
+		</ul>
+		<ul id="list2">
+			<li>guava</li>
+			<li>orange</li>
+			<li>pineapple</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// contains method -> isse kisi specific tag ke ander tag ko find kr skte h. ye true or false m value deta h. true - jb tag find ho jata h(chahe vo grand child ho ya great grand child),false - jb tag find na ho
+		parentElement=document.getElementById('test')
+		target=document.getElementById('abc')
+		find=parentElement.contains(target)
+		console.log('contains method ->')
+		console.log(find)
+
+		// hasAttribute method -> kisi tag ke specific attribute se usi tag ke ander dusre attribute ko find kr skte h.ye true/false m value deta h. true - jb attribute ho(chahe uske ander value ho ya nhi)
+		target=document.getElementById('test')
+		find=target.hasAttribute('class')
+		console.log('hasAttribute method ->')
+		console.log(find)
+
+		// hasChildNodes -> ye specific tag ke ander childNode ko find krta h ye true/false m value return krta h true - ander childNode h false - childNode nhi h,childNode - koi bhi tag,text,comment ya space
+		target=document.getElementById('test')
+		find=target.hasChildNodes('')
+		console.log('hasChildNodes method ->')
+		console.log(find)
+
+		// isEqualNode ex 1) -> do nodes ke bich compare krta h or true/false m value return krta h true hone ke liye nodeType,nodeName,nodeValue,childNodes,attributes,attributes values same honi chahiye, ek bhi different hone pr false return krega
+		target1=document.getElementById('list1').firstElementChild
+		target2=document.getElementById('list2').firstElementChild
+		equal=target1.isEqualNode(target2)
+		console.log('isEqualNode method ex 1) ->')
+		console.log(equal)
+		// isEqualNode ex 2)
+		target1=document.getElementById('list1').firstElementChild
+		target2=document.getElementById('list2').children[1]
+		equal=target1.isEqualNode(target2)
+		console.log('isEqualNode method ex 2) ->')
+		console.log(equal)
+	</script>
+</body>
+</html>

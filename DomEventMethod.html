@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="header">
+		<h1>DOM Event Method</h1>
+	</div>
+	<div id="header1">
+		<h1>addEventListner Method</h1>
+	</div>
+
+	<div id="outer" style="width: 500px;height: 500px;background-color: red;">
+		<h3>Outer Div</h3>
+		<div id="inner" style="width: 200px;height: 200px;background-color: blue;">
+		<h3>Inner Div</h3>
+	    </div>
+	</div>
+
+	<div id="removeEventListner">
+		<h1>removeEventListner Method</h1>
+	</div>
+	
+	<script type="text/javascript">
+		// DOM Event Method - isse DOM se hi function call krva skte h
+		// method for call event with DOM
+		document.getElementById('header').onclick=abc // abc - function ka name
+		function abc(){
+			document.getElementById('header').style.background='green'
+		}
+		// another method for call event with DOM - is method m event ke name m on nhi likhte(onclick ki jagah click likhenge) or ek hi object pr multiple events call kr skte h
+		document.getElementById('header').addEventListener('mouseenter',ab) // mouse ko jab text pr leker jaenge tb function call hoga
+		function ab(){
+			document.getElementById('header').style.background='red'
+		}
+		// one more another method for call event with DOM
+		document.getElementById('header').addEventListener('mouseleave', function(){
+			document.getElementById('header').style.background=''
+		}) // mouse ko jab text pr se hataenge tb function call hoga
+
+		// addEventListner method se multiple same event call kr skte h
+		document.getElementById('header1').addEventListener('click',function(){document.getElementById('header1').style.background='yellow'})
+		document.getElementById('header1').addEventListener('click',function(){this.style.border='2px solid red'}) //    document.getElementById('header1') ki jagah this likh skte h keval is function ke ander
+		// useCapture - iski do hi value ho skti h -> true,false
+		document.querySelector('#inner').addEventListener('click',function(){
+			alert('inner div')
+		},true) // by default false hota h
+		document.querySelector('#outer').addEventListener('click',function(){
+			alert('outer div')
+		},true) // true krne pr phle outer phir inner div ka function call hoga or false krne pr phle inner phir outer div ka function call hoga
+		// removeEventListner
+		document.getElementById('removeEventListner').addEventListener('click',remove)
+		function remove(){
+			document.getElementById('removeEventListner').style.backgroundColor='red'
+		}// removeEventListner ke example ke liye ek event call krvaya jise removeEventListner method se remove krenge
+		document.getElementById('removeEventListner').removeEventListener('click',remove) // phle parameter event ka name or dusra parameter function ka name jise remove krna ho
+	</script>
+</body>
+</html>

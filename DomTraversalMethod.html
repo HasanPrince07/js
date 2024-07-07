@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html id="main">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body style="display: flex;justify-content: center;">
+	<div style="width: 1000px;height: 300px;background-color: yellow;padding: 10px;" id="outer">
+		<h2>OUTER</h2>
+		<div style="background-color: pink;padding: 5px;" id="inner">
+			<h2 id="child-h2">INNER</h2>
+			<div style="width: 15px;height: 15px;background-color: white;margin: 3px;">A</div>
+			<div style="width: 15px;height: 15px;background-color: white;margin: 3px;">B</div>
+			<div style="width: 15px;height: 15px;background-color: white;margin: 3px;" id="child-c">C</div>
+			<div style="width: 15px;height: 15px;background-color: white;margin: 3px;">D</div>
+			<div style="width: 15px;height: 15px;background-color: white;margin: 3px;" id="child-e">E</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// DOM Traversal Method - is method se html ke object or tag ko target kr skte h
+		// parent element ex 1) - kisi element ke parent element ko target kr skte h
+		a=document.getElementById('inner').parentElement
+		console.log('parent element ex 1) ->')
+		console.log(a) // inner id vale element ka parent element outer id vala element h
+		// parent element ex 2)
+		a=document.getElementById('outer').parentElement
+		console.log('parent element ex 2) ->')
+		console.log(a) // outer id vale element ka parent element body tag(element) h
+
+		document.getElementById('child-c').parentElement.style.backgroundColor='blue' // inner element ki id se parentElement ko target krke usme styling bhi kr skte h
+
+		// parentNode - ye same parentElement method ki tarah hi hota h bs ager iska koi parent element nhi ho phir bhi ye kuch na kuch return krta h jbki parent Element method m ager uska koi parent element na ho to vo null return krta  
+		a=document.getElementById('main').parentElement
+		console.log(a)
+		a=document.getElementById('main').parentNode
+		console.log(a)
+
+		// children ex 1) - kisi element ke child element(us element ka ander vala element) ko target kr skte h
+		a=document.getElementById('outer').children
+		console.log('children ex 2) ->')
+		console.log(a) // ye ek array return krega jisme ye sare children element ko show krega
+		// children ex 2)
+		a=document.getElementById('inner').children[1] // kisi specific children ko target krne ke liye
+		console.log('children ex 2) ->') 
+		console.log(a)
+		// parent element ki tarah isme bhi style de skte h
+
+		// childNodes - children method ki tarah hi hota h bs ye comment,enter se diya space jise ye text name se show krta h in sbhi ko count krta h
+		a=document.getElementById('outer').childNodes
+		console.log('childNode ->')
+		console.log(a) // childNodes method se styling bhi de skte h
+
+		// firstElementChild ex 1) - iska mtlb sbse phla child tag
+		a=document.getElementById('inner').firstElementChild
+		console.log('firstElementChild ex 1) ->')
+		console.log(a) // inner id vale element ka sbse phla child tag h2 h
+		// firstElementChild ex 2)
+		a=document.getElementById('inner').firstElementChild.innerHTML
+		console.log('firstElementChild ex 2) ->')
+		console.log(a) // isme first child element ka inner html/text bhi dekh skte h
+		// firstElementChild method se styling bhi kr skte h
+
+		// lastElementChild - mtlb sbse last vala child tag
+		a=document.getElementById('inner').lastElementChild
+		console.log('lastElementChild ->')
+		console.log(a) // ye same hota h firstElementChild ke bs last vale element ko target krta h
+
+		// firstChild - select kiye gye element ka sbse phla child jisme ye space ko text ki tarah or comment ko bhi count krta h
+		a=document.getElementById('inner').firstChild
+		console.log('firstChild ->')
+		console.log(a) // #text return krega kyoki inner id vale element ke bad enter se space diya huva h jise ye #text m darshata h
+
+		// lasChild - firstChild ke same hota h bs last child ko target krta h included comment and text(enter se diya gya space)
+		a=document.getElementById('inner').lastChild
+		console.log('lastChild ->')
+		console.log(a)
+		// firstChild or lastChild ke is example m styling nhi kr skte kyoki ye ek text ko target kr rhe h jisme styling krna possible nhi h ager starting m koi space nhi hota to firstChild method h2 tag target krta jisme styling ki ja skti h
+        
+        // sibling - div-A,B,C,D,E sbhi apas m sibling
+		// nextElementSibling ex 1) - child-c id vale element ke just age vala element nextElementSibling hota h
+		a=document.getElementById('child-c').nextElementSibling
+		console.log('nextElementSibling ex 1) ->')
+		console.log(a)
+		// nextElementSibling ex 2)
+		a=document.getElementById('child-e').nextElementSibling
+		console.log('nextElementSibling ex 2) ->')
+		console.log(a) // null return krega kyoki iska koi next sibling element nhi h
+
+		// previousElementSibling ex 1) - child-c id vale element ke just phle vala element previousElementSibling hota h
+		a=document.getElementById('child-c').previousElementSibling
+		console.log('previousElementSibling ex 1) ->')
+		console.log(a)
+		// previousElementSibling ex 2)
+		a=document.getElementById('child-c').previousElementSibling.innerHTML
+		console.log('previousElementSibling ex 2) ->')
+		console.log(a) // previousElementSibling se previous element or nextElementSibling se next element ka innerHTML dekh skte h
+		// previousElementSibling ex 3)
+		a=document.getElementById('child-h2').previousElementSibling
+		console.log('previousElementSibling ex 3) ->')
+		console.log(a) // null return krega kyoki iska koi previous sibling element nhi h
+
+		// nextSibling or previousSibling - same nextElementSibling or previousElementSibling ki tarah hota h bs ye text or comment ko bhi count krta h
+		a=document.getElementById('child-c').nextSibling
+		console.log('nextSibling ->')
+		console.log(a) // ye #text return krega kyoki ye space ko bhi count krega previousSibling m bhi ye hi return krega
+	</script>
+</body>
+</html>

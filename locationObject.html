@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<button onclick="openweb()">open website</button><br><br>
+	<button onclick="reloadweb()">reload website</button><br><br>
+	<button onclick="assignweb()">assign url</button><br><br>
+	<button onclick="replaceweb()">replace web</button><br><br>
+	<script type="text/javascript">
+		// location object -> ise online site ya server pr hi check kr skte h
+		document.write(location.href) // other location ex - location.host, location.hostname, location.port, location.protocol, location.hash, location.search
+		function openweb(){
+			location.href='http://www.yahoobaba.net/';
+		}
+		// location method
+		// location.reload - isse page refresh hota h
+		function reloadweb(){
+			location.reload()
+		}
+		// location.assign - isme kisi website ka url assign krte h us website ko open krne ke liye
+		function assignweb(){
+			location.assign('https://www.google.com')
+		}
+		// location.replace - ye assign ki tarah hota pr back krne pr vapas previous page open nhi hota
+		function replaceweb(){
+			location.replace('https://www.google.com')
+		}
+	</script>
+</body>
+</html>

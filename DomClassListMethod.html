@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="header" class="abc xyz">
+		<h1>add ClassList Method</h1>
+	</div>
+	<div id="header1">
+		<h1>remove ClassList Method</h1>
+	</div>
+	<div id="header2" class="x">
+		<h1>toggle ClassList Method</h1>
+	</div>
+	<script type="text/javascript">
+		// classList method
+
+		// 1) add method - isse new class add kr skte h
+		document.getElementById('header').addEventListener('click',a)
+		function a(){
+			document.getElementById('header').classList.add('cba')
+		} // click krne pr cba name ki class bhi isme add ho jaegi or jo class last m lgti h uski priority jyada hoti h or isme age koma lgakr ek se jyada bhi class add kr skte h
+		// 2) remove method - isse class remove kr skte h
+		document.getElementById('header1').addEventListener('click',b)
+		function b(){
+			document.getElementById('header').classList.remove('cba','abc')
+		} // click krne pr cba name ki class remove ho jaegi or koma lgakr ek se jyada bhi class remove kr skte h
+		// 3) length method - ye keval html m jo class lgai hue h unki length show krta h dom method se add ki gae class ko count nhi krta
+		a=document.getElementById('header').classList.length
+		console.log(a)
+		// 4) toggle - click krne pr ek hi class ko add kr skte h or dobara click pr usi class ko remove kr skte h
+		document.getElementById('header2').addEventListener('click',c)
+		function c(){
+			document.getElementById('header2').classList.toggle('y')
+		}
+		// 5) item - index no. se class ko search kr skte h
+		a=document.getElementById('header').classList.item(0)
+		console.log(a)
+		// 6) contains - ye btata h ki select kiye gye tag pr class h ya nhi ager h to true nhi to false return krega
+		a=document.getElementById('header').classList.contains('bac')
+		console.log(a) // false - mtlb bac name ki class header id vale tag pr nhi h
+	</script>
+</body>
+</html>

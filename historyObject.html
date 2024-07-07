@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<h1>history object</h1>
+<button onclick="backfun()">backword</button>
+<button onclick="forwardfun()">forward</button>
+<button onclick="gofun()">go</button>
+<script type="text/javascript">
+	// history object -> backward(recent) ya forward pages pr jane ke liye
+	// length - ye total pages btata h(same window m current or history ko milakr total kitne pages khole h)
+	console.log(history.length)
+	// history object methods - back(),forward(),go()
+	// back() -  isse ek page backward jate h
+	function backfun(){
+		history.back()
+	}
+	// forward() - isse ek page forward jate h
+	function forwardfun(){
+		history.forward()
+	}
+	// go() - ye backward or forward dono ki tarah kaam krte h
+	// +1 ka mtlb 1 page forward
+	// -2 ka mtlb 2 page backward
+	function gofun(){
+		history.go(-2)
+	}
+</script>
+</body>
+</html>

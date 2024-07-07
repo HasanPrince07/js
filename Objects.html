@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// object a
+		a = {fname: 'yahoo',lname: 'baba',age: 30} // object m values lete h with property
+		document.write('object a --> {fname: yahoo,lname: baba,age: 30}<br>')
+		console.log(a) // object console m detail m show hota h
+		document.write(a+'<br>') // ase object ko print nhi kr skte
+		document.write(a.fname+'<br>') // object ki property print hoti h
+		document.write(a.fname = 'zamir'+'<br>') // property ki value change hoti h
+		document.write(a.gmail = 'yahoo@gmail.com'+'<br>') // new property add krne ke liye
+		delete a.gmail; // property delete ho jaegi
+		document.write(a.gmail+'<br><br>')
+		// object b
+		b = {fname: 'yahoo',movie: ['sholey','hum','doom']} // object m array le skte h
+		document.write('object b --> {fname: yahoo,movie: [sholey, hum, doom]}<br>')
+		document.write(b.movie[1]+'<br><br>') // array ke elements ko show kr skte h
+		// object c
+		c = {fname: 'yahoo',
+		     lname: 'baba',
+		     salary: function(){
+		     	return 25000
+		     },
+		     fullname: function(){
+		     	return this.fname + ' ' + this.lname // this keyword kisi object ko refer krta h or usme function ko own krta h
+		    }} // object ke ander function le skte h jise method khte h
+		document.write('object c --><br> {fname: yahoo,lname: baba,<br>salary: function(){<br>   return 25000<br>},<br>fullname: function(){<br>return this.fname this.lname<br>}}<br>')
+		document.write(c.salary()+'<br>') // function ki value show hogi
+		document.write(c.fullname()+'<br><br>')
+		// object d
+		d = {fanme: 'yahoo',
+	         living: {'city': 'ajmer',
+	                  'country': 'india'},
+	        } // object ke ander bhi object le skte h
+	    document.write('object d --><br>{fname: yahoo,living: {city: ajmer,country: india},}<br>')
+	    document.write(d.living.city+'<br>') // object ke ander vale object ke variable ki value show hogi
+	    // another method to create a object
+	    a = new Object() // a is a object jisme bad m value add krenge
+	    a.name = 'karan'
+	    a.age = 22
+	    a.arr = ['yahoo','baba']
+	    a.obbj = {fname: 'karn',lname: 'sharma'}
+	    document.write(a.name+'<br><br>') // ise document.write(a['name']) ase bhi likh skte h
+	    console.log(a)
+	    // array of objects
+	    student = [{name: 'karan',age: 15},{name: 'rahul',age: 20}]
+	    document.write('array of object --><br>object --> [{name: karan,age: 15},{name: rahul,age: 20}]<br>')
+	    for(a=0;a<student.length;a++){
+	    	document.write('name : '+student[a].name+', age : '+student[a].age+'<br>')
+	    }
+	</script>
+</body>
+</html>

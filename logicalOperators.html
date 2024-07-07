@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// logical not
+		var x = 10;
+		document.write((!x==10 ) + '<br>')
+		// logical or
+		var a = 2;
+		var b = 3;
+		document.write((a==2||b==5) + '<br>')
+		// logical and with if else if condition
+		var percentage = prompt('please enter your percentage')
+		var percentage = 55;
+		if(percentage>=80&&percentage<=100){
+			document.write('you are in merit')
+		}
+		else if(percentage>=60&&percentage<80){
+			document.write('you are in 1st division')
+		}
+		else if(percentage>=45&&percentage<60){
+			document.write('you are in 2nd division')
+		}
+		else if(percentage>=30&&percentage<45){
+			document.write('you are in 3rd division')
+		}
+		else if(percentage<30){
+			document.write('you are fail')
+		}
+		else{
+			document.write('please enter valid percentage')
+		}
+	</script>
+</body>
+</html>

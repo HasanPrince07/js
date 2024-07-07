@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// getDate method
+		myDate = new Date()
+		document.write('Date -> '+myDate+'<br>') // current date detail m show hogi
+		// toDateString
+		document.write('toDateString -> '+myDate.toDateString()+'<br>') // current month,week,date,year show hoga
+		// getFullYear
+		document.write('getFullYear -> '+myDate.getFullYear()+'<br>') // current year return krega
+		// getMonth
+		document.write('getMonth -> '+(myDate.getMonth()+1)+'<br>') // current month return krega(month ki numbering 0 se start hogi isliye isme + 1 add kr denge)
+		// getDate
+		document.write('getDate -> '+myDate.getDate()+'<br>') // current date return krega
+		// getDay
+		document.write('getDay -> '+myDate.getDay()+'<br>') // current day return krega(0 - sunday)
+		// getHours
+		document.write('getHours -> '+myDate.getHours()+'<br>') // current hours return krega(0 - 24)
+		// getMinutes
+		document.write('getMinutes -> '+myDate.getMinutes()+'<br>') // current date return krega
+		// getSeconds
+		document.write('getSeconds -> '+myDate.getSeconds()+'<br>') // current date return krega
+		// getMilliseconds
+		document.write('getMilliseconds -> '+myDate.getMilliseconds()+'<br><br>') // current date return krega
+
+		// date method with given date
+		myDate = new Date('march 5 2010')
+		document.write('date -> 5 march 2010<br>day -> '+myDate.getDay()+'<br>') // ye given date pr jo day tha vo return krega(5 - friday)
+		document.write('month -> '+myDate.getMonth()+'<br>') // 2 - march
+		document.write('Hours -> '+myDate.getHours()+'<br><br>') // ye hours,minutes,seconds,milliseconds pr 0 return krega
+
+		// setDate method
+		myDate = new Date()
+		// setFullYear
+		myDate.setFullYear(2023)
+		document.write('setFullYear -> '+myDate+'<br>') // aaj ki date or month lekar future year ki detail return krega
+		// setMonth
+		myDate.setMonth(2)
+		document.write('setMonth -> '+myDate+'<br>') // future ke march month ki detail return krega
+		// setDate
+		myDate.setDate(4)
+		document.write('setDate -> '+myDate+'<br>') // future ke date ki detail return krega
+		// setHours
+		myDate.setHours(14)
+		document.write('setHours -> '+myDate+'<br>') // future ke hours ki detail return krega
+		// setMinutes
+		myDate.setMinutes(2)
+		document.write('setMinutes -> '+myDate+'<br><br>') // future ke minutes ki detail return krega
+
+		// current date/month.year
+		myDate = new Date()
+		document.write('current date -> '+myDate.getDate()+'/'+(myDate.getMonth()+1)+'/'+myDate.getFullYear())
+	</script>
+</body>
+</html>

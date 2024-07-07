@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// number method ex 1)
+		a = '99'
+		b = Number(a) // string value ko numeric value m convert krta h
+		document.write('Number method ex 1) -> '+(b+10)+'<br>Number method ex 2) -> ')
+		// number method ex 2)
+		a = false
+		b = Number(a) // true ko 1 or false ko 0 m convert krta h
+		document.write(b+'<br>Number method ex 3) -> ')
+		// number method ex 3)
+		a = '99 88'
+		b = Number(a) // NaN(not a number) return krega kyuki isme space nhi de skte
+		document.write(b+'<br><br>parseInt method ex 1) -> ')
+		// parseInt method ex 1)
+		a = '20 55 25'
+		document.write(parseInt(a)+'<br>parseInt method ex 2) -> ') // values m agar space ho to ye keval starting ki value print krta h
+		// parseInt method ex 2)
+		a = '28 year'
+		document.write(parseInt(a)+'<br>parseInt method ex 3) -> ') 
+		// parseInt method ex 3)
+		a = '10.25'
+		document.write(parseInt(a)+'<br>parseInt method ex 4) -> ') // desimal se phle ki value print krega
+		// parseInt method ex 4)
+		a = 'he is 50'
+		document.write(parseInt(a)+'<br><br>parseFloat method -> ') // NaN - kyoki starting m koi value nhi mili
+		// parseFloat method
+		a = '10.25'
+		document.write(parseFloat(a)+'<br><br>isFinite ex 1) -> ') // ye same parseInt ki tarah hi hota h bs point ke bad vali value bhi print krke deta h
+		// isFinite method ex 1)
+		a = 1/0
+		document.write(isFinite(a)+'<br>isFinite ex 2) -> ') // true - number infinity nhi ho(countable ho), false - infinity ho(uncountable ho)
+		// isFinite method ex 2)
+		a = NaN
+		document.write(isFinite(a)+'<br>isFinite ex 3) -> ')
+		// isFinite method ex 3)
+		a = 'hello'
+		document.write(isFinite(a)+'<br>isFinite ex 4) -> ')
+		// isFinite method ex 4)
+		a = '29'
+		document.write(isFinite(a)+'<br><br>isInteger method ex 1) -> ')
+		// isInteger method ex 1)
+		a = 26
+		document.write(Number.isInteger(a)+'<br>isInteger method ex 2) -> ')
+		// isInteger method ex 2)
+		a = '26'
+		document.write(Number.isInteger(a)+'<br><br>toFixed method ex 1) -> ')
+		// toFixed method ex 1)
+		a = 5.24358
+		document.write(a.toFixed(3)+'<br>toFixed method ex 2) -> ') // point ke bad 2 digit tk show krega round off krke, last value m +1 ka increament hoga ager uske bad ki value 5 se 9 ke bich ho
+		// toFixed method ex 2)
+		a = 6.32456
+		document.write(a.toFixed(2)+'<br><br>toPrecision ex 1) ->')
+		// toPrecision ex 1)
+		a = 5.24358
+		document.write(a.toPrecision(3)+'<br>toPrecision ex 2) -> ') // same toFixed method ki tarah pr starting se 3 digit count krega
+		// toPrecision ex 2)
+		a = 6.3634
+		document.write(a.toPrecision(2)+'<br>toPrecision ex 3) -> ')
+		// toPrecision ex 3)
+		a = 6.3639
+		document.write(a.toPrecision(7)) // age 2 zero or add krke 7 digit return krega bina value m change kiye
+	</script>
+</body>
+</html>

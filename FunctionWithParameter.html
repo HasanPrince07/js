@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// function with parameter
+		function name(fname,lname){
+			document.write('my name is '+fname+' '+lname+'<br>');
+		}
+		name('mohammad','hasan');
+		name('salman','khan')
+		function sum(a,b){
+			document.write(a+b+'<br>')
+		}
+		sum(10,20)
+		// function with return value
+		function sum(eng,hin,sci){
+			var s = eng+hin+sci;
+			return s;
+		}
+		function percentage(ttl){
+			var per = ttl/300*100
+			document.write(per)
+		}
+		var total = sum(45,35,75)
+		percentage(total) // process->eng,hin,sci teen parameter h jinki value pass krne ke bad unka sum variable s m store hoga or s return ho jaega phir sum variable total m store hoga or total se percentage m vha se ttl m or ese per ki value get hogi
+	</script>
+</body>
+</html>

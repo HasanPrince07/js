@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// length property
+		a = 'JavaScript is a Great Language'
+		document.write('string value -> JavaScript is a Great Language<br>length of string value -> ')
+		document.write(a.length+'<br>to lower case -> ') // length is a property jo string value m words count krta h with space
+		// to lower case method
+		document.write(a.toLowerCase()+'<br>to upper case -> ') // ye sbhi words ko small letter m convert krta h
+		// to upper case method
+		document.write(a.toUpperCase()+'<br>includes method ex 1) -> ') // ye sbhi words ko capital letter m convert krta h
+		// includes method ex 1)
+		document.write(a.includes('great')+'<br>includes method ex 2) -> ') // ye word ko find krke true,false m answer(show krta h) deta h 
+		// includes method ex 2)
+		document.write(a.includes('Great')+'<br>includes method ex 3) -> ') // ye case sensitive hota h(capital or small letter m frk krta h)
+		// includes method ex 3)
+		document.write(a.includes('ipt')+'<br>includes method ex 4) -> ') // true - javascript ke end m ipt h
+		// includes method ex 4)
+		document.write(a.includes(' ')+'<br>starts method -> ') // true - letter ke bich m space h
+		// starts with method
+		document.write(a.startsWith('java')+'<br>ends with method -> ') // starting ka word search krta  h
+		// ends with method
+		document.write(a.endsWith('Language')+'<br>search method ex 1) -> ') // end ka word search krta h
+		// search method ex 1)
+		document.write(a.search('is')+'<br>search method ex 2) -> ') // word ka index no. btata h
+		// search method ex 2)
+		document.write(a.search('great')+'<br><br>string value -> JavaScript is a Great is Language<br>match method ex 1) -> ') // jo word nhi hota use -1 se show krega
+		// match method ex 1)
+		a = 'JavaScript is a Great is Language'
+		document.write(a.match('php')+'<br> match method ex 2) -> ') // word nhi milne pr null show krega
+		// match method ex 2)
+		document.write(a.match('is')+'<br> match method ex 3) -> ') // word milne pr word hi show krta h
+		// match method ex 3)
+		document.write(a.match(/is/g)+'<br>indexOf method ->') // g - pure sentence m jitni bar bhi word milega utni bar show krega
+		// indexOf method
+		document.write(a.indexOf('is')+'<br>last indexOf method -> ') // strating se word search krke uska index no. show krega
+		// lastIndexOf method
+		document.write(a.lastIndexOf('is')+'<br>replace method ex 1) -> ') // ending se word search krke uska index no. show krega
+		// replace method ex 1)
+		document.write(a.replace('JavaScript','PHP')+'<br>replace method ex 2) -> ') // PHP JavaScript se replace ho jaega
+		// replace method ex 2)
+		document.write(a.replace(/is/g,'are')+'<br> trim method -><br>previos values length -> ') // sbhi is are se replace ho jaenge
+		// trim method
+		a = '   java   ' 
+		document.write(a.length+'<br>new length -> ') // 11 - value ki length with space
+		b=a.trim() // value ke age piche ka space remove ho jata h
+		document.write(b.length+'<br><br>string value -> JavaScript is a GREAT Language<br>charAt method -> ') // 4 - isme space remove hone se length kam ho gyi
+		// charAt method
+		a = 'JavaScript is a GREAT Language'
+		document.write(a.charAt(4)+'<br><br>string value 1) -> JavaScript<br>string value 2) -> Hello<br>string value 3) -> World<br>concat method -> ') // index no. 4 pr jo character h vo show krega
+		// concat method
+		str1 = 'JavaScript'
+		str2 = 'Hello'
+		str3 = 'World'
+		a = str1.concat(str2,str3) // str1 ke ander str2 or str3 add ho jaega
+		document.write(a+'<br><br>string value -> JavaScript is a GREAT Language<br>split method ex 1) -> ')
+		// split method ex 1)
+		a = 'JavaScript is a GREAT Language'
+		document.write(a.split(' ')+'<br>split method ex 2) ->') // jha bhi space hoga usko htakar ye baki value ka ek alag array bna dega
+		// split method ex 2)
+		document.write(a.split('a')+'<br>repeat method -> ') // bich se a htakar value ko alag krke array bnaega
+		// repeat method
+		document.write(a.repeat(2)+'<br>slice method ex 1)-> ') // string value ko 2 bar repeat krega
+		// slice method ex 1)
+		document.write(a.slice(3)+'<br>slice method ex 2)-> ') // 3 tk string value nikalkr ek new string value bnegi
+		// slice method ex 2)
+		document.write(a.slice(4,10)+'<br>slice method ex 3)-> ') // index no. 4 se 9 tk ki value show hogi
+		// slice method ex 3)
+		document.write(a.slice(-2)+'<br>substr method -> ') // last ki 2 value show hogi
+		// substr method
+		document.write(a.substr(2,7)+'<br>substring method -> ') // index no. 2 se ye 7 chracters ko count krega or unhe show krega
+		// substring method
+		document.write(a.substring(4,10)+'<br><br>number value -> 50<br>tostring method ->') // same slice method ki tarah
+		// tostring method
+		a = 50
+		b = a.toString() // a ko number se string value m convert kr dega 
+		document.write(b+60) // proof - agar number hoti to value add hoker 110 ho jati
+	</script>
+</body>
+</html>

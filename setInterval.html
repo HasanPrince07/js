@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#test{
+			width: 150px;
+			height: 150px;
+			background: red;
+		}
+		#test1{
+			width: 150px;
+			height: 150px;
+			margin-top: 20px;
+			background: blue;
+		}
+		button{
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="test"></div>
+	<div id="test1"></div>
+	<button onclick="stopAnim()">stop anim</button>
+	<script type="text/javascript">
+		// setInterval - kisi function ko ek specific time interval pr call krvate h. ye us function ko har us specific time ke bad call krta h. isme do parameter lete h phla - function ka name.dusra - time in millisecond. 1millisecond = 1 second
+		// clearInterval - setInterval function ko remove krne ke liye. setInterval ko kisi varaible ke equal rkhkr us variable ko clearInterval ke ander rkhte h
+		// har 1 second bad a ki value m 20 ka increament hoga or marginLeft ki value bdegi or div left to right move hogi
+		// jb a ki value 100 hogi to clearInterval function call hoga or div or move nhi kregi 
+		a=0
+		x=setInterval(anim,1000)
+		function anim(){
+			a=a+20
+			if(a==100){
+                clearInterval(x)
+			}
+			else{
+               target=document.getElementById('test')
+			   target.style.marginLeft=a+'px'
+			}
+		}
+		// setTimeout - kisi function ko ek specific time ke bad ek bar run krvana ho to setTimeout ka use krenge. isme bhi do parameter lete h.phla - function ka name.dusra - time in milliseconds
+		// clearTimeout - setTimeout ko remove krne ke liye iska use krte h.
+		// ek button pr function call krvate jispr click krne pr clearTimeout function call hoga or setTimeout remove ho jaega ager button pr click setTimout m diye gye time se phle hi krte h to
+		y=setTimeout(anim1,3000)
+		function anim1(){
+			target=document.getElementById('test1')
+			target.style.width='500px'
+		}
+		function stopAnim(){
+			clearTimeout(y)
+		}
+	</script>
+</body>
+</html>

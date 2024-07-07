@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body onload="on()">
+	<h1 id="main1">hasan</h1>
+	<h1 id="main2">yahoo<span>baba</span></h1>
+	<script type="text/javascript">
+		// googole chrome console - ye keval google chrome m hi kaam krte h
+		console.log(document.getElementById('main1').innerText)
+		console.log(document.getElementById('main2').innerHTML)
+		a = [1,2,3]
+		// console.clear
+		console.clear() // pure console ko clear kr deta h
+		// console.log
+		console.log(a) // console m array ki detail show krega
+		// console.table
+		console.table(a) // table ki form m detail show krega
+		// console.error
+		console.error(a) // error ki form m detail show krega
+		// console.warning
+		console.warn(a) // warning ki form m detail show krega
+		// console.time & console.timeEnd
+    	console.time()
+    	console.timeEnd() // ye dono console se time ka pta chlta h ki pure documents ko load hone m kitna time lga
+		function on(){
+			x=setTimeout('aa()',1000)
+		}
+		function aa(){
+		    	document.getElementById('main1').style.color='blue'
+		}
+
+		
+	</script>
+</body>
+</html>

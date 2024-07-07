@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Array
+		arr = [10,'hasan',true] // we can store different datatype value in a array 
+		document.write(arr[2])
+		console.log(arr)
+		document.write('<br>')
+		// create array with different method 1)
+		var newArr = new Array()
+		newArr[0] = 1;
+		newArr[1] = 'rehan';
+		newArr[2] = false;
+		// create array with different method 2)
+		document.write(newArr+'<br>')
+		var arr = new Array(1,2,'sdk')
+		document.write(arr+'<br>')
+		document.write('will print the value from for loop which was stored by prompt inside the array--><br>')
+		// will print the value from for loop which was stored by prompt inside the array
+		// for(a=0;a<3;a++){
+		// 	arr[a] = prompt('enter arrays value')
+		// }
+		// document.write('<ul>')
+		// for(b=0;b<3;b++){
+		// 	document.write('<li>'+arr[b]+'</li>')
+		// }
+		// document.write('</ul>')
+		document.write('<br>')
+		document.write('Multidimensional Array--><br>')
+		// MultiDimensional Array
+		arry = [['a','b','c'],['x','y','z'],[1,2,3]]
+		for(a=0;a<3;a++){
+			for(b=0;b<3;b++){
+				document.write(arry[a][b]+' ')
+			}document.write('<br>')
+		}
+		document.write('arrays length method--> ')
+		// Arrays Length Method
+		document.write(arry.length)
+		document.write('<br><br>')
+		document.write('Multidimensional array with arrays length method--><br>')
+		// Multidimensional array with arrays length method
+		arry = [['a','b','c'],['x','y','z'],[1,2,3]]
+		for(a=0;a<arry.length;a++){
+			for(b=0;b<arry[a].length;b++){ // arry[a].length --> ander vale array ki length 
+				document.write(arry[a][b]+' ')
+			}document.write('<br>')
+		}
+		document.write('<br>')
+		document.write('modify and remove arrays element--><br>')
+		// modify and remove arrays element
+		myAry = [18,'rehan','male','b.ca']
+		document.write(myAry)
+		myAry[1]='kalesh'
+		document.write('<br> replace rehan name with kalesh --> '+myAry+'<br>')
+		delete myAry[2]
+		document.write('<br> delete male element-- --> '+myAry+'<br><br>') // elemnet delete hoga lekin uska space rhega
+
+		// map method ex 1)
+		document.write('map method ex1) --><br>arry -> [5,11,18,22]<br>new array -> ')
+		a = [5,11,18,22]
+		b = a.map(test1) // array ko kisi value se calculate krke ek nya array create kr skte h
+		function test1(x){
+			return x*10
+		}
+		document.write(b+'<br><br>')
+		// map method ex 2)
+		document.write('map method ex2) --><br>arry -> [5,11,18,22]<br>new array -> ')
+		a = [{fname: 'yahoo',lname: 'baba'},{fname: 'rahul',lname: 'kumar'},{fname: 'karan',lname: 'sharma'}]
+		b = a.map(test) // isme properties ki value print karvate h 
+		function test(x){
+			return x.fname+' '+x.lname
+		}
+		document.write(b)
+	</script>
+</body>
+</html>

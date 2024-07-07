@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = ['sanjay','aman','yogesh','dilip']
+		document.write('array --> ')
+		document.write(a+'<br>')
+
+		// sort method
+		a.sort() // elements alphabet according set ho jate h (a->z)
+		document.write('sort method --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// reverse method
+		a.reverse() // elements reverse ho jate h
+		document.write('reverse method --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// push method
+		a.push('karan') // array ke last m element add hoga
+		document.write('push method --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// pop method
+		a.pop() // array ke last m element delete hoga
+		document.write('pop method --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// unshift method
+		a.unshift('karan') // array ke start m element add hoga
+		document.write('unshift method --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// shift method
+		a.shift() // array ke start m delete hoga
+		document.write('shift method --> '+a+'<br><br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// concat method ex 1)
+		// concat method ek new array create krta h
+		b = a.concat(5,'karan') // array a ke ander elements add honge
+		document.write('concat method ex 1) --> '+b+'<br>')
+		var a = ['sanjay','aman']
+		var b = ['x','y',3]
+		var c = ['ab','cd']
+		document.write('array a --> '+a+'<br>')
+		document.write('array b --> '+b+'<br>')
+		document.write('array c --> '+c+'<br>')
+		// concat method ex 2)
+		d = a.concat(b,c) // array a ke ander b or c array merge(add) honge
+		document.write('concat method ex 2) --> '+d+'<br><br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+		document.write('array --> '+a+'<br>')
+
+		// join method ex 1)
+		b = a.join('$') // ye array ko string value m convert kr dega
+		document.write('join method ex 1)--> '+b+'<br>')
+		// join method ex 2)
+		b = a.join('') // ye array ko string value m convert kr dega
+		document.write('join method ex 2)--> '+b+'<br>')
+		// join method ex 3)
+		b = a.join('<br>') // array ke har element ke bad br tag apply hoga(koi bhi tag lga skte h)
+		document.write('join method ex 3)--><br> '+b+'<br><br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+
+		// slice method ex 1)
+		b = a.slice(1,3) // index no. 1 se 2 tak ka ek alag array create hoga
+		document.write('slice method ex 1)--> '+b+'<br>')
+		// slice method ex 2)
+		b = a.slice(1) // index no. 1 se end tak ka ek alag array create hoga
+		document.write('slice method ex 2)--> '+b+'<br>')
+		// slice method ex 3)
+		b = a.slice(-2) // index no. 2 se end tak ka ek alag array create hoga
+		document.write('slice method ex 3)--> '+b+'<br>')
+		// slice method ex 4)
+		b = a.slice(-3,-1) // index no. -3 se -2 tak ka ek alag array create hoga
+		document.write('slice method ex 4)--> '+b+'<br><br>')
+
+		// splice method ex 1)
+		a.splice(2,0,'a',4,'b') // first number mean(2) - us index no. pr add ki gae value aa ajaegi, second number means(0) - add ki gae value ke bad kitne elements ko delete krna h, third means('a',4,'b') - jo elements add krne ho
+		document.write('splice method ex 1) --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+		// splice method ex 2)
+		a.splice(2,1,'neha','megha') // second number(1) - value add hone ke bad 1 element delete ho jaega
+		document.write('splice method ex 2) --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+		// splice method ex 3)
+		a.splice(2,2) // index no. 2 ke bad 2 element delete ho jaenge
+		document.write('splice method ex 3) --> '+a+'<br>')
+		var a = ['sanjay','aman','yogesh','dilip']
+		// splice method ex 4)
+		a.splice(-2,1,'x','y') // index no. 1 ke bad 2 element add hoker 1 elemet delete ho jaega  
+		document.write('splice method ex 4) --> '+a+'<br><br>isArray method --> <br>')
+
+		// isArray method
+		document.write('ex 1) '+Array.isArray(a)+'<br>') // true - this is array,false - this is not array
+		a = 10;
+		document.write('ex 2) '+Array.isArray(a)+'<br>')
+		a = [10,'karan']
+		b = Array.isArray(a)
+		document.write('ex 3) '+b+'<br>')
+		if(Array.isArray(a)){document.write('ex 4) this is array<br><br>indexOf method --><br>')}
+		else{document.write('ex 4) this is not array<br><br>indexOf method --><br>')}
+
+		// indexOf method
+	    a = ['a','b','z','a','k','c']
+	    document.write('array --> '+a+'<br>')
+	    document.write('ex 1) '+a.indexOf('b')+'<br>') // index no. show krega
+	    document.write('ex 2) '+a.indexOf('a')+'<br>')
+	    document.write('ex 3) '+a.indexOf('a',1)+'<br>') // second number means(1) - index no. 1 ke bad search krega ki a konse no. pr h 
+	    document.write('ex 4) '+a.indexOf('q')+'<br><br>lastIndexOf method --><br>') // -1 mtlb q array m h hi nhi
+
+	    //lastIndexOf method
+	    document.write('ex 1) '+a.lastIndexOf('a')+'<br>') // lastIndexOf me searching end se start hoti h
+	    document.write('ex 2) '+a.lastIndexOf('a',2)+'<br><br>include method --><br>') // index no. 2 se phle ke elements search honge
+
+	    // includes method
+	    document.write('ex 1) '+a.includes('a')+'<br>')
+	    document.write('ex 2) '+a.includes('j')+'<br><br>')
+
+	    // some method
+	    a = [10,12,18,20,25]
+	    document.write('array --> '+a+'<br>some method --> ')
+	    b = a.some(check) // some method ke ander function pass krte h jisme ek condition dete h jo array ke har element se check hoti h ek bhi condition true hone pr ye true return karta h
+	    function check(ages){
+	    	return ages>=22
+	    }
+	    document.write(b+'<br>every method --> ')
+
+	    // every method
+	    b = a.every(check) // every method some method ke same hota h bs isme sab value true hone pr ye true return krta h
+	    function check(ages){
+	    	return ages>=20
+	    }
+	    document.write(b+'<br>find method --> ')
+
+	    // find method
+	    b = a.find(check) // array ke har element se condition check hoti h jo element condition se sbse phle true hota h vo element show(print) hota h phir age condition check nhi hoti 
+	    function check(ages){
+	    	return ages>=15
+	    }
+	    document.write(b+'<br>findIndex method --> ')
+
+	    // findIndex method
+	    b = a.findIndex(check) // same find method ki tarah pr isme value ki jagah index no. print hota h
+	    function check(ages){
+	    	return ages>=15
+	    }
+	    document.write(b+'<br>filter method --> ')
+
+	    // filter method
+	    b = a.filter(check) // jo bhi condition array ke element se true hogi vo sari value print hogi
+	    function check(age){
+	    	return age>=15
+	    }
+	    document.write(b+'<br><br>')
+
+	    // toString method
+	    a = ['rahul','aman','karan']
+	    b = a.toString() // ye array ko ek string value m convert kr deta h
+	    document.write('array --> '+a+'<br>toString method --> '+b+'<br>proof --> ')
+	    document.write(Array.isArray(b)+'<br>valueOf method --> ')
+
+	    // valueOf method
+	    document.write(a.valueOf()+'<br>fill method --> ') // ise document.write(a) ase bhi likh skte h valueOf likhne ki zarurat nhi
+
+	    // fill method
+	    document.write(a.fill('5')) // array a m sbhi elements ki jagah 5 replace ho jaega
+	</script>
+</body>
+</html>

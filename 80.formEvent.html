@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form action="" onsubmit="submitfunction()">
+		<label>name</label><input onfocus="focusFunction(this)" onblur="blurfunction(this)" oninput="inputfunction(this)" onchange="changefunction(this)" onselect="selectfunction(this)" oninvalid="alert('please fill the first name')" required id="fname" type="text" name=""><br><br>
+		<label>class</label><input onfocus="focusFunction(this)" onblur="blurfunction(this)" type="text" name=""><br><br>
+		<label>country</label>
+		<select onfocus="focusFunction(this)" onblur="blurfunction(this)">
+			<option value="india">india</option>
+			<option value="pakistan">pakistan</option>
+			<option value="bangladesh">bangladesh</option>
+			<option value="sri lanka">sri lanka</option>
+			<option value="nepal">nepal</option>
+		</select>
+		<br><br>
+		<input type="submit" name="">
+	</form>
+	<div id="text" style="border: 1px solid red;margin-top: 20px;"></div>
+	<div id="text1" style="border: 1px solid blue;margin-top: 20px;"></div>
+	<script>
+		// this - jis input pr onfocus,onblur,oninput event lga ho vhi call hoga
+		// element - variable
+		// onfocus - input pr click krne pr ye event call hota h
+		function focusFunction(element){
+			element.style.background='green'
+		}
+		// onblur - input ke bhar click krne pr ye event call hota h
+		function blurfunction(element){
+			element.style.background=''
+		}
+		// oninput - jb input m text field krte h tb ye event call hota h
+		function inputfunction(element){
+			x=element.value
+			document.getElementById('text').innerHTML=x
+		}
+		// onchange - jb input me text field krke input se focusout(input ke bhar click krne pr) krte h tb ye event call hota h
+		function changefunction(element){
+			x=element.value
+			document.getElementById('text1').innerHTML=x
+		}
+		// onselect - text input m likhe words ko select krne pr ye event call hota h
+		function selectfunction(){
+			console.log('you selected some words')
+		}
+		// onsubmit - iska use form m krte h. jb user submit btn pr click ktra h tb ye event call hota h
+		// input m id denge
+		// input m text field krne pr value variable x m store hogi phir alert m hello ke sath show hogi
+		function submitfunction(){
+			x=document.getElementById('fname').value
+			alert('hello'+x)
+		}
+		// oninvalid - iska use required ke sath krte h alert show krane m,input field ko empty rkhne pr alert show krvate h
+		// required - default popup show hota h input field empty hone pr
+	</script>
+</body>
+</html>

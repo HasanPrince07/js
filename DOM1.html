@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="header" class="abc">
+		<h1>querySelector(ID)</h1>
+	</div>
+	<ul class="list">
+		<li><a href="">home</a></li>
+		<li><a href="">about us</a></li>
+		<li><a href="">galary</a></li>
+		<li><a href="">contact us</a></li>
+	</ul>
+	<p class="list">usdhiasdisa</p>
+	<div id="footer">
+		<h1>h1</h1>
+		<h1>another h1</h1>
+	</div>
+
+	<div id="hdr" style="border: 2px solid red;">
+		<h1>DOM CSS Styling</h1>
+	</div>
+	<script type="text/javascript">
+		// querySelector
+
+		// set and get value with querySelector and byId
+		document.querySelector('#header').innerHTML='<h3>newQuerySelector</h3>' // id ki value ko bracket m # ke sath likhte h or phir innerHTML ko get ya set kr skte h
+		element=document.querySelector('#header').innerHTML
+		console.log('new value of innerHTML ->')
+		console.log(element)
+		// getAttribute with querySelector
+		element=document.querySelector('#header').getAttribute('class') // class ki value show hogi
+		console.log('getAttribute ->')
+		console.log(element)
+		// get and set value with querySelector and byClassName
+		element=document.querySelector('.list') // class name se select krne pr . lgate h or id se select krne pr # lagate h
+		console.log('querySelector with className ->')
+		console.log(element)
+		// querySlectorAll
+		element=document.querySelectorAll('.list') // querySelectorAll m array ke ander sabhi list name ki class show krega or querySelector keval sbse phle vali list name ki class ki detail hi show krega
+		console.log('querySlectorAll ->')
+		console.log(element)
+		// querySelectorAll with index no.
+		element=document.querySelectorAll('.list')[1] // index no. 1 pr jo class hogi use show krega
+		console.log('querySlectorAll in index no. 1 ->')
+		console.log(element)
+		// querySelectorAll with index no. and innerHTML
+		element=document.querySelectorAll('.list')[1].innerHTML // index no. 1 vali class ka inner html show hoga
+		console.log('querySlectorAll innerHTML in index no. 1 ->')
+		console.log(element)
+		// querySelector with tagName
+		element=document.querySelectorAll('li') // tagName se bhi querySelector m html ko target kr skte h
+		console.log('querySlectorAll with tagName ->')
+		console.log(element)
+		// querySelector with tagName and index no.
+		element=document.querySelectorAll('li')[1].innerHTML='<h3>as</h3>' // index no. dekar inner html get or set kr skte h
+		console.log('querySlectorAll with tagName and index no. ->')
+		console.log(element)
+		// advance querySelector 
+		element=document.querySelectorAll('#footer h1') // footer id ke ander bhi kisi tag ko target kr skte h
+		console.log('advance querySelectorAll ->')
+		console.log(element)
+		// advance querySelector with index no.
+		element=document.querySelectorAll('#footer h1')[1].innerText // footer id ke ander index no. 1 pr h1 tag ka inner html show krega
+		console.log('advance querySelectorAll index no. ->')
+		console.log(element)
+
+		// DOM css styling method
+		// methods of CSS styling in DOM - 1)style 2)className 3)classList -> inse css ki value get or set kr skte h
+        // get style value
+        element=document.querySelector('#hdr').style.border // hdr id ke style attribute ki value get hogi
+        console.log('get style value ->')
+        console.log(element)
+        // set style value
+        document.querySelector('#hdr').style.background='skyblue' // hdr id ke style attribute ki value set(change) hogi
+        element=document.querySelector('#hdr').style.background
+        console.log('set style value ->')
+        console.log(element)
+        // set ClassName
+        document.querySelector('#hdr').className='ab cd' // ab or cd name ki class add ho jaegi lekin cd name ki class ko priorety milege kyoki ise bad m likha gya
+        document.querySelector('.ab').style.color='white' // ab name ki class ke style attribute m color property ki value add ho jaegi
+        element=document.querySelector('#hdr').className
+        console.log('new class ->')
+        console.log(element)
+        // classList
+        element=document.querySelector('#hdr').classList // classList hme ek array return krta h jimse sbhi classes hongi jbki className hme array return nhi krta simply classes ke name return krta h
+        console.log('new classList ->')
+        console.log(element)
+        // add  method of classList
+        document.querySelector('#hdr').classList.add('x','y') // add method se hm class add krte h
+        element=document.querySelector('#hdr').className
+        console.log('add method of classList ->')
+        console.log(element)
+        // remove  method of classList
+        document.querySelector('#hdr').classList.remove('x','y') // remove method se hm class remove krte h
+        element=document.querySelector('#hdr').className
+        console.log('remove method of classList ->')
+        console.log(element)
+	</script>
+</body>
+</html>

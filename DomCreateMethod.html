@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="test" style="width: 500px;height: 300px;background-color: yellow;">
+		<p>appendChild</p>
+		<p>And</p>
+		<p>insertBefore</p>
+		<p>Method</p>
+	</div>
+	<div id="test1" style="width: 500px;height: 300px;background-color: wheat;margin-top: 50px;">
+		<p>DOM insertAdjacent Method</p>
+	</div>
+	<div id="test2" style="width: 500px;height: 300px;background-color: skyblue;margin-top: 50px;">
+		<p>DOM insertAdjacentHTML</p>
+	</div>
+	<ul id="list">
+		<li>orange</li>
+		<li>apple</li>
+		<li>grapes</li>
+		<li>banana</li>
+	</ul>
+	<ul id="list2">
+		<li>carrot</li>
+		<li>reddish</li>
+	</ul>
+	<script type="text/javascript">
+		// DOM create method
+		// 1) newElement - is method se html m element create kr skte h
+		newElement=document.createElement('h1')
+		console.log(newElement)
+		// 2) newTextNode - is method se html m text create kr skte h
+		newText=document.createTextNode('this is text')
+		console.log(newText)
+		// 3) newComment - is method se html m comment create kr skte h
+		newComment=document.createComment('this is comment')
+		console.log(newComment)
+
+		// DOM append method
+		// append child - create method se create kiye gye tag or text ko attach krne ke liye ye method hota h
+		newElement.appendChild(newText)
+		console.log(newElement)
+		document.getElementById('test').appendChild(newElement) // html ke kisi bhi tag ke ander create kiye gye tag/text ko add kr skte h or appendChild method se add kiya gya element/text hamesha last m hi add hota h
+        document.getElementById('test').appendChild(newComment) // ase hi comment bhi add kr skte h
+
+		// insertBefore - is method se create kiye gye element/text ko bich m khi bhi add kr skte h jbki appendChild method se element/text last m hi add hota h
+		newText1=document.createTextNode('insertBefore text')
+		a=document.getElementById('test')
+		a.insertBefore(newText1,a.children[2]) // newText1 - create kiya gya text,childNodes[2] - test id vale div ke index no. 2 pr jo children hoga usse phle(ya us index no. pr) ye text add ho jaega 
+
+        // DOM insertAdjacent method ->
+		// insertAdjacentElement - ye element ko create bhi krta h or append bhi krta h
+		// insertAdjacentHTML - ye element ko create krta h with text or unhe append bhi krta h
+		// insertAdjacentText - ye text ko create bhi krta h or append bhi krta h
+
+		// DOM insertAdjacent positions -> 1)beforebegin 2)afterbegin 3)beforeend 4)afterend
+		
+        // 1) beforebegin - isse create kiya gya element/text select kiye gye tag ke begin hone se just phle add(append) ho jaega
+		newElement=document.createElement('h1')
+		newText=document.createTextNode('beforebegin')
+		newElement.appendChild(newText)
+		target=document.getElementById('test1')
+		target.insertAdjacentElement('beforebegin',newElement) // sbse phle h1 tag or text create kiya phir un dono ko append kiya or phir beforebegin se create kiye gye element ko select kiye gye tag ke begin hone se just phle add kr diya
+
+		// 2) afterbegin - isse create kiya gya element/text select kiye gye tag ke begin hone ke just bad add(append) ho jaega
+		newElement=document.createElement('h1')
+		newText=document.createTextNode('afterbegin')
+		newElement.appendChild(newText)
+		target=document.getElementById('test1')
+		target.insertAdjacentElement('afterbegin',newElement)
+
+        // 3) beforeend - isse create kiya gya element/text select kiye gye tag ke end hone se just phle add(append) ho jaega
+		newElement=document.createElement('h1')
+		newText=document.createTextNode('beforeend')
+		newElement.appendChild(newText)
+		target=document.getElementById('test1')
+		target.insertAdjacentElement('beforeend',newElement)
+        
+       	// 4) afterend - isse create kiya gya element/text select kiye gye tag ke end hone ke just bad add(append) ho jaega
+		newElement=document.createElement('h1')
+		newText=document.createTextNode('afterend')
+		newElement.appendChild(newText)
+		target=document.getElementById('test1')
+		target.insertAdjacentElement('afterend',newElement)
+
+		// with insertAdjacentHTML
+		newElement='<h2>with insertAdjacentHTML</h2>'
+		target=document.getElementById('test2')
+		target.insertAdjacentHTML('afterbegin',newElement) // ek hi line m tag or text ko sath m likhkr insertAdjacentHTML method se select kiye gye tag m append kr denge
+
+		//with insertAdjacentText
+		newText='with insertAdjacentText'
+		target=document.getElementById('test2')
+		target.insertAdjacentText('beforeend',newText) // text ko create krke insertAdjacentText method se select kiye gye tag m append kr denge
+
+		//replaceChild method - html tag/textNode ko replace krne ke liye ye method use m lete h
+		newElement=document.createElement('li')
+		newText=document.createTextNode('wow new text')
+		newElement.appendChild(newText)
+		target=document.getElementById('list')
+		oldElement=target.children[1]
+		target.replaceChild(newElement,oldElement) // sbse phle li tag create karenge with text phir us tag ko target krenge jisme create kiye gye tag ko replace krna h phir jiski jagah replace krna h us element ko target krenge phir replaceChild method se element ko replace kr denge. yha newElement or oldElement name ke do paramater liye. phla parameter - jis element ko add krna h,dusra parameter - jiski jagah add krna h   
+
+		//removeChild method - html tag/textNode ko remove krne ke liye ye method use m lete h
+		target=document.getElementById('list')
+		oldElement=target.children[0]
+		target.removeChild(oldElement) // isme keval ek hi parameter lete h. parameter - jis element ko remove krna ho select kiye gye element m se
+
+		// DOM cloneNode method - ye element ko copy krta h or use khi or past krta h
+		target=document.getElementById('list').children[1]
+		copyElement=target.cloneNode(true) // cloneNode ke ander true/false value hoti h by default false hoti h. false ka mtlb keval tag or attribute hi copy hoga(bhar ka html) ager uske ander ka html bhi copy krna ho to true pass krenge
+		document.getElementById('list2').appendChild(copyElement)
+	</script>
+</body>
+</html>
